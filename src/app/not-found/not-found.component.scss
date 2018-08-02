@@ -122,7 +122,7 @@ $tail-interval: (11 - 7.5) / $tail-wags;
 @include effect('right-ear', $k-right-ear);
 
 
-body {
+.cat-cont {
   background-color: $teal;
   display: flex;
   justify-content: center;
