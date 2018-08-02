@@ -7,10 +7,10 @@
     </logo>
     <links>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active waves-light" routerLinkActive=" active" mdbWavesEffect>
+        <li class="nav-item  waves-light" mdbWavesEffect>
           <a class="nav-link white-text" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">Login</a>
         </li>
-        <li class="nav-item waves-light" routerLinkActive=" active" mdbWavesEffect>
+        <li class="nav-item waves-light" mdbWavesEffect>
           <a class="nav-link white-text" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">Logout</a>
         </li>
         <!-- <li class="nav-item waves-light" routerLinkActive=" active" mdbWavesEffect>
@@ -61,7 +61,7 @@
   <div class="footer-copyright py-3">Data Provided
     <i class="fa fa-fire p-1 yellow-text"></i> By
     <a href="https://developer.github.com/v3/" target="_blank" rel="noopener">
-      <i class="fa fa-git" aria-hidden="true"></i> GitHub</a>
+      GitHub</a>
   </div>
 
 

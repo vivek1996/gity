@@ -13,6 +13,8 @@ import { NgProgressHttpModule } from '@ngx-progressbar/http';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthService } from './auth/auth.service';
+import { ApiService } from './api.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,7 @@ import { ProfileComponent } from './profile/profile.component';
     NgProgressHttpModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthService, ApiService],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
