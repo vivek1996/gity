@@ -1,13 +1,53 @@
-.navbar {
-    background-color: transparent;
-}
+// .navbar {
+//     background-color: transparent;
+// }
 
-.top-nav-collapse {
-    background-color: #4285F4;
-}
+// .top-nav-collapse {
+//     background-color: #4285F4;
+// }
 
-@media only screen and (max-width: 768px) {
-    .navbar {
-        background-color: #4285F4;
-    }
+// @media only screen and (max-width: 768px) {
+//     .navbar {
+//         background-color: #4285F4;
+//     }
+// }
+.navbar-brand {
+  padding: 0;
+}
+.nav-link {
+  font-weight: 400;
+}
+a .fa {
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in-out;
+  &.fa-facebook:hover {
+    color: #3b5998;
+  }
+  &.fa-twitter:hover {
+    color: #1da1f2;
+  }
+  &.fa-google-plus:hover {
+    color: #dd4b39;
+  }
+  &.fa-github:hover {
+    color: #4078c0;
+  }
+}
+.my-5 {
+  margin-top: 6rem !important;
+}
+// footer {
+//   position: absolute;
+//   bottom: 0;
+//   width: 100%;
+//   height: auto;
+// }
+#bg {
+  background-color: rgb(40, 40, 61);
+  -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }

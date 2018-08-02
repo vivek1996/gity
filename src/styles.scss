@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'Google sans';
+  src: local('Google sans'), url(./assets/fonts/GoogleSans-Regular.ttf);
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Google sans';
+  src: url(./assets/fonts/GoogleSans-Italic.ttf);
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Google sans';
+  src: url(./assets/fonts/GoogleSans-MediumItalic.ttf);
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Google sans';
+  src: url(./assets/fonts/GoogleSans-Bold.ttf);
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+// html,
+// body {
+//   height: 100%;
+// }
+body {
+  font-weight: 400;
+  font-family: 'Google sans', 'Segoe UI', 'Helvetica Neue', Helvetica, Roboto,
+    'Open Sans', FreeSans, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  ::selection {
+    color: white;
+    background-color: rgb(34, 32, 36);
+  }
+}
