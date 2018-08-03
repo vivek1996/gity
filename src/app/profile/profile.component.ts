@@ -19,11 +19,25 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     if (this.auth.userProfile) {
       this.profile = this.auth.userProfile;
-      this.user = this._http.getUser(this.profile.nickname);
+      this._http.getUser(this.profile.nickname).subscribe(
+        data => {
+          this.user = data;
+        },
+        error => {
+          console.log(error);
+        }
+      );
     } else {
       this.auth.getProfile((err, profile) => {
         this.profile = profile;
-        this.user = this._http.getUser(this.profile.nickname);
+        this._http.getUser(this.profile.nickname).subscribe(
+          data => {
+            this.user = data;
+          },
+          error => {
+            console.log(error);
+          }
+        );
       });
     }
   }

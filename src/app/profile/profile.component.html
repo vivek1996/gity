@@ -1,6 +1,6 @@
 <div class="row mb-5">
   <div class="col-md-4">
-    <mdb-card class="testimonial-card" style="max-width: 22rem;">
+    <mdb-card class="testimonial-card  mt-2" style="max-width: 22rem;">
       <div class="card-up aqua-gradient">
       </div>
       <div class="avatar mx-auto" *ngIf="profile">
@@ -8,9 +8,9 @@
       </div>
       <mdb-card-body>
         <mdb-card-title>
-          <h4 *ngIf="profile">( {{profile.name}} )</h4>
-          <p class=" text-muted" *ngIf="user">{{user.login}}</p>
-          <p class="lead text-secondary" *ngIf="user.bio">{{user.bio}}</p>
+          <h4 *ngIf="profile"> {{profile.name}} </h4>
+          <p class=" text-muted" *ngIf="user">( {{user.login}} )</p>
+          <p class="lead text-secondary" *ngIf="user">{{user.bio}}</p>
         </mdb-card-title>
         <hr>
         <div *ngIf="user">
@@ -25,7 +25,7 @@
     </mdb-card>
   </div>
   <div class="col-md-6">
-    <div class="card ">
+    <div class="card mt-2">
       <div class="py-5 px-4">
         <div *ngIf="user">
           <ul class="list-group">
@@ -46,8 +46,10 @@
               <span class="badge badge-dark badge-pill">{{user.following}}</span>
             </li>
           </ul>
-          <p>Created At : {{user.created_at | date}}</p>
-          <p>Last Updated : {{user.updated_at | date}}</p>
+          <div class="my-2">
+            <p>Created At : {{user.created_at | date}}</p>
+            <p>Last Updated : {{user.updated_at | date}}</p>
+          </div>
         </div>
       </div>
     </div>
