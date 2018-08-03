@@ -1,12 +1,32 @@
-<p>
-  profile works!
-</p>
-<h6>
-  <pre>
-    {{profile | json}}
-  </pre>
-</h6>
+<div class="row mb-5">
+  <div class="col-md-6">
 
+    <!--Card-->
+    <mdb-card class="testimonial-card" style="max-width: 22rem;">
+      <!--Bacground color-->
+      <div class="card-up aqua-gradient">
+      </div>
+
+      <!--Avatar-->
+      <div class="avatar mx-auto">
+        <img [src]="profile.picture" class="rounded-circle" style="max-height: 9rem">
+      </div>
+
+      <mdb-card-body>
+        <!--Name-->
+        <mdb-card-title>
+          <h4>{{profile.name}}</h4>
+        </mdb-card-title>
+        <hr>
+        <!--Quotation-->
+        <p>
+          <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+      </mdb-card-body>
+    </mdb-card>
+    <!--/.Card-->
+
+  </div>
+</div>
 <section class="bg-white">
   <ngb-tabset>
     <ngb-tab>
