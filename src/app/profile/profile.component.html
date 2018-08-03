@@ -1,30 +1,56 @@
 <div class="row mb-5">
-  <div class="col-md-6">
-
-    <!--Card-->
+  <div class="col-md-4">
     <mdb-card class="testimonial-card" style="max-width: 22rem;">
-      <!--Bacground color-->
       <div class="card-up aqua-gradient">
       </div>
-
-      <!--Avatar-->
-      <div class="avatar mx-auto">
+      <div class="avatar mx-auto" *ngIf="profile">
         <img [src]="profile.picture" class="rounded-circle" style="max-height: 9rem">
       </div>
-
       <mdb-card-body>
-        <!--Name-->
         <mdb-card-title>
-          <h4>{{profile.name}}</h4>
+          <h4 *ngIf="profile">( {{profile.name}} )</h4>
+          <p class=" text-muted" *ngIf="user">{{user.login}}</p>
+          <p class="lead text-secondary" *ngIf="user.bio">{{user.bio}}</p>
         </mdb-card-title>
         <hr>
-        <!--Quotation-->
-        <p>
-          <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+        <div *ngIf="user">
+          <p *ngIf="user.company !== null">
+            <i class="fa fa-building-o mr-2" aria-hidden="true"></i> Company : {{user.company}} </p>
+          <p *ngIf="user.blog !== null">
+            <i class="fa fa-internet-explorer mr-2" aria-hidden="true"></i>Blog : {{user.blog}} </p>
+          <p *ngIf="user.location !== null">
+            <i class="fa fa-globe mr-2" aria-hidden="true"></i> {{user.location}} </p>
+        </div>
       </mdb-card-body>
     </mdb-card>
-    <!--/.Card-->
-
+  </div>
+  <div class="col-md-6">
+    <div class="card ">
+      <div class="py-5 px-4">
+        <div *ngIf="user">
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Public Repos
+              <span class="badge badge-dark badge-pill">{{user.public_repos}}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Public Gists
+              <span class="badge badge-dark badge-pill">{{user.public_gists}}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Followers
+              <span class="badge badge-dark badge-pill">{{user.followers}}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Following
+              <span class="badge badge-dark badge-pill">{{user.following}}</span>
+            </li>
+          </ul>
+          <p>Created At : {{user.created_at | date}}</p>
+          <p>Last Updated : {{user.updated_at | date}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <section class="bg-white">
