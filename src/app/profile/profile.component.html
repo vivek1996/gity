@@ -6,45 +6,53 @@
     {{profile | json}}
   </pre>
 </h6>
-<section>
 
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs nav-justified">
-    <li class="nav-item waves-effect waves-light">
-      <a class="nav-link" data-toggle="tab" href="#panel1" role="tab" aria-selected="false">Profile</a>
-    </li>
-    <li class="nav-item waves-effect waves-light">
-      <a class="nav-link active show" data-toggle="tab" href="#panel2" role="tab" aria-selected="true">Follow</a>
-    </li>
-    <li class="nav-item waves-effect waves-light">
-      <a class="nav-link" data-toggle="tab" href="#panel3" role="tab" aria-selected="false">Contact</a>
-    </li>
-  </ul>
-  <!-- Tab panels -->
-  <div class="tab-content card">
-    <!--Panel 1-->
-    <div class="tab-pane fade in" id="panel1" role="tabpanel">
-      <br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae
-        placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
-    </div>
-    <!--/.Panel 1-->
-    <!--Panel 2-->
-    <div class="tab-pane fade active show" id="panel2" role="tabpanel">
-      <br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae
-        placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae
-        placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
-    </div>
-    <!--/.Panel 2-->
-    <!--Panel 3-->
-    <div class="tab-pane fade" id="panel3" role="tabpanel">
-      <br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae
-        placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
-    </div>
-    <!--/.Panel 3-->
-  </div>
+<section class="bg-white">
+  <ngb-tabset>
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+        <b>Title 1</b>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <div class="container-fluid my-3">
+          <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
+            cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
+            synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan
+            aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+        </div>
 
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+        <b>Title 2</b>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <div class="container-fluid my-3">
+          <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table
+            craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl
+            cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia
+            yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable
+            jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher
+            vero sint qui sapiente accusamus tattooed echo park.</p>
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+        <b>Title 3</b>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <div class="container-fluid my-3">
+          <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi.
+            Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio.
+            Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna,
+            egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus nisl enim, nec
+            tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque penatibus et
+            magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet ultricies in eget
+            neque. Phasellus nec tortor vel tellus pulvinar feugiat.</p>
+        </div>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
 </section>

@@ -42,3 +42,22 @@ body {
     background-color: rgb(34, 32, 36);
   }
 }
+#ngb-tab-0,
+#ngb-tab-1,
+#ngb-tab-2 {
+  // margin-right: 0.25em;
+  color: #fff;
+  background-color: #18bc9c;
+  border-color: #18bc9c;
+  &.active {
+    border-color: #18bc9c;
+    color: #18bc9c;
+    background-color: #fff;
+  }
+}
+// .nav-tabs .nav-link:hover {
+//   background-color: #ffffff !important;
+// }
+// .nav-tabs .nav-link:hover a {
+//   text-decoration: none;
+// }
