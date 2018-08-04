@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 // mdb import
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { NgbTabsetModule } from '@ng-bootstrap/ng-bootstrap';
+
 // ngx progressbar import
 import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
@@ -29,8 +29,7 @@ import { ApiService } from './api.service';
     HttpClientModule,
     NgProgressModule.forRoot(),
     NgProgressHttpModule,
-    MDBBootstrapModule.forRoot(),
-    NgbTabsetModule
+    MDBBootstrapModule.forRoot()
   ],
   providers: [AuthService, ApiService],
   bootstrap: [AppComponent],

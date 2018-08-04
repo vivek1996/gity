@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './../auth/auth.service';
-import { NgbTabsetConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ApiService } from './../api.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss'],
-  providers: [NgbTabsetConfig]
+  styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
   profile: any;
@@ -14,10 +12,7 @@ export class ProfileComponent implements OnInit {
   repos: any;
   events: any;
   private userId: string;
-  constructor(public auth: AuthService, config: NgbTabsetConfig, private _http: ApiService) {
-    config.justify = 'fill';
-    config.type = 'pills';
-  }
+  constructor(public auth: AuthService, private _http: ApiService) {}
 
   ngOnInit() {
     if (this.auth.userProfile) {
