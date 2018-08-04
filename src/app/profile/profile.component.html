@@ -1,6 +1,6 @@
 <div class="row mb-5">
-  <div class="col-md-4">
-    <mdb-card class="testimonial-card  mt-2" style="max-width: 22rem;">
+  <div class="col-md-4" *ngIf="profile">
+    <mdb-card class="testimonial-card  mt-2">
       <div class="card-up aqua-gradient">
       </div>
       <div class="avatar mx-auto" *ngIf="profile">
@@ -53,6 +53,14 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6 text-center" *ngIf="!repos">
+    <button class="btn pink " (click)="getRepo()"> get repos </button>
+  </div>
+  <div class="col-6 text-center" *ngIf="!events">
+    <button class="btn pink " (click)="getEvents()"> get events </button>
   </div>
 </div>
 <section class="bg-white">

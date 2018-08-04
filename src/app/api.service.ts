@@ -28,7 +28,7 @@ export class ApiService {
   }
    // Get user's events
    getEvents(name: string) {
-    return this.http.get(`${this.url}/${name}/received_events`);
+    return this.http.get(`${this.url}/${name}/events`);
   }
   // Get user's repo
   getRepo(name: string) {

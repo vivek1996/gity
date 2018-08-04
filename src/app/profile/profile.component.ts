@@ -11,6 +11,9 @@ import { ApiService } from './../api.service';
 export class ProfileComponent implements OnInit {
   profile: any;
   user: any;
+  repos: any;
+  events: any;
+  private userId: string;
   constructor(public auth: AuthService, config: NgbTabsetConfig, private _http: ApiService) {
     config.justify = 'fill';
     config.type = 'pills';
@@ -19,7 +22,8 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     if (this.auth.userProfile) {
       this.profile = this.auth.userProfile;
-      this._http.getUser(this.profile.nickname).subscribe(
+      this.userId = this.profile.nickname;
+      this._http.getUser(this.userId).subscribe(
         data => {
           this.user = data;
         },
@@ -30,7 +34,8 @@ export class ProfileComponent implements OnInit {
     } else {
       this.auth.getProfile((err, profile) => {
         this.profile = profile;
-        this._http.getUser(this.profile.nickname).subscribe(
+        this.userId = this.profile.nickname;
+        this._http.getUser(this.userId).subscribe(
           data => {
             this.user = data;
           },
@@ -40,5 +45,27 @@ export class ProfileComponent implements OnInit {
         );
       });
     }
+  }
+  // Get repos
+  getRepo() {
+    this._http.getRepo(this.userId).subscribe(
+      data => {
+        this.repos = data;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+  // get events
+  getEvents() {
+    this._http.getEvents(this.userId).subscribe(
+      data => {
+        this.events = data;
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 }
