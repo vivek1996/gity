@@ -60,6 +60,28 @@
     <button class="btn pink " (click)="getRepo()"> get repos </button>
   </div>
   <div class="col-6 text-center" *ngIf="!events">
-    <button class="btn pink " (click)="getEvents()"> get events </button>
+    <button class="btn pink " (click)="getFollowing()"> get events </button>
   </div>
 </div>
+<tabset [justified]="true" type="pills">
+  <tab heading="Followers" customClass="tab-style">
+    <div class="py-3">
+      <ul>
+        <li class="chip" *ngFor="let follower of followers">
+          <img [src]="follower.avatar_url" alt="">
+          <a target="_blank" rel="noopener" [href]="follower.html_url">{{follower.login}}</a>
+        </li>
+      </ul>
+    </div>
+  </tab>
+  <tab heading="Following" customClass="tab-style">
+    <div class="py-3">
+      <ul>
+        <li class="chip" *ngFor="let follower of following">
+          <img [src]="follower.avatar_url" alt="">
+          <a target="_blank" rel="noopener" [href]="follower.html_url">{{follower.login}}</a>
+        </li>
+      </ul>
+    </div>
+  </tab>
+</tabset>

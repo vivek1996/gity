@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 // mdb import
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
+import { TabsModule } from 'ngx-bootstrap/tabs';
 // ngx progressbar import
 import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
@@ -16,12 +16,14 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthService } from './auth/auth.service';
 import { ApiService } from './api.service';
+import { SearchUserComponent } from './search-user/search-user.component';
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    SearchUserComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { ApiService } from './api.service';
     HttpClientModule,
     NgProgressModule.forRoot(),
     NgProgressHttpModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    TabsModule.forRoot()
   ],
   providers: [AuthService, ApiService],
   bootstrap: [AppComponent],

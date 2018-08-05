@@ -12,6 +12,8 @@ export class ProfileComponent implements OnInit {
   repos: any;
   events: any;
   private userId: string;
+  followers: any;
+  following: any;
   constructor(public auth: AuthService, private _http: ApiService) {}
 
   ngOnInit() {
@@ -21,6 +23,7 @@ export class ProfileComponent implements OnInit {
       this._http.getUser(this.userId).subscribe(
         data => {
           this.user = data;
+          this.getDetails();
         },
         error => {
           console.log(error);
@@ -33,6 +36,7 @@ export class ProfileComponent implements OnInit {
         this._http.getUser(this.userId).subscribe(
           data => {
             this.user = data;
+            this.getDetails();
           },
           error => {
             console.log(error);
@@ -41,6 +45,11 @@ export class ProfileComponent implements OnInit {
       });
     }
   }
+  getDetails() {
+    this.getFollowers();
+    this.getFollowing();
+  }
+
   // Get repos
   getRepo() {
     this._http.getRepo(this.userId).subscribe(
@@ -57,6 +66,30 @@ export class ProfileComponent implements OnInit {
     this._http.getEvents(this.userId).subscribe(
       data => {
         this.events = data;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+  // Get followers
+  getFollowers() {
+    this._http.getFollowers(this.userId).subscribe(
+      data => {
+        this.followers = data;
+        console.log(this.followers);
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+  // Get following
+  getFollowing() {
+    this._http.getFollowing(this.userId).subscribe(
+      data => {
+        this.following = data;
+        console.log(this.following);
       },
       error => {
         console.log(error);

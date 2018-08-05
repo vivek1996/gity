@@ -61,3 +61,25 @@ body {
 // .nav-tabs .nav-link:hover a {
 //   text-decoration: none;
 // }
+.tab-style {
+  // margin-right: 0.25em;
+  a span {
+    color: rgb(255, 255, 255);
+  }
+
+  // background-color: #18bc9c;
+  // border-color: #18bc9c;
+  // .active {
+  //   border-color: #18bc9c;
+  //   color: #18bc9c;
+  //   background-color: #fff;
+  // }
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #e91e63;
+}
+.navbar.navbar-2 .navbar-toggler-icon {
+  background-image: url('https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff');
+}
