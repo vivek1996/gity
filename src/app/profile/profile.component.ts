@@ -77,7 +77,7 @@ export class ProfileComponent implements OnInit {
     this._http.getFollowers(this.userId).subscribe(
       data => {
         this.followers = data;
-        console.log(this.followers);
+       // console.log(this.followers);
       },
       error => {
         console.log(error);
@@ -89,7 +89,7 @@ export class ProfileComponent implements OnInit {
     this._http.getFollowing(this.userId).subscribe(
       data => {
         this.following = data;
-        console.log(this.following);
+       // console.log(this.following);
       },
       error => {
         console.log(error);

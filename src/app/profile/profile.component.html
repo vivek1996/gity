@@ -55,14 +55,7 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-6 text-center" *ngIf="!repos">
-    <button class="btn pink " (click)="getRepo()"> get repos </button>
-  </div>
-  <div class="col-6 text-center" *ngIf="!events">
-    <button class="btn pink " (click)="getFollowing()"> get events </button>
-  </div>
-</div>
+
 <tabset [justified]="true" type="pills">
   <tab heading="Followers" customClass="tab-style">
     <div class="py-3">
