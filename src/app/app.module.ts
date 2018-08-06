@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 // ngx progressbar import
 import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
@@ -32,7 +33,8 @@ import { SearchUserComponent } from './search-user/search-user.component';
     NgProgressModule.forRoot(),
     NgProgressHttpModule,
     MDBBootstrapModule.forRoot(),
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+    PaginationModule.forRoot()
   ],
   providers: [AuthService, ApiService],
   bootstrap: [AppComponent],

@@ -37,17 +37,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  background: #00d2ff; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to bottom,
-    #928dab,
-    #00d2ff
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #928dab,
-    #00d2ff
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  // background: #00d2ff; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(
+  //   to bottom,
+  //   #928dab,
+  //   #00d2ff
+  // ); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(
+  //   to bottom,
+  //   #928dab,
+  //   #00d2ff
+  // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   ::selection {
     color: white;
@@ -61,12 +61,13 @@ body {
 // .nav-tabs .nav-link:hover a {
 //   text-decoration: none;
 // }
-.tab-style {
+.nav-item.tab-style {
   // margin-right: 0.25em;
-  a span {
-    color: rgb(255, 255, 255);
-  }
-
+  // a span {
+  //   color: rgb(255, 255, 255);
+  // }
+  border: 2px solid #e91e63;
+  border-radius: 0.4rem;
   // background-color: #18bc9c;
   // border-color: #18bc9c;
   // .active {
@@ -82,4 +83,8 @@ body {
 }
 .navbar.navbar-2 .navbar-toggler-icon {
   background-image: url('https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff');
+}
+.navbar.navbar-dark .navbar-toggler-icon {
+  background-image: url('https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff');
+  cursor: pointer;
 }
