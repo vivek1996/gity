@@ -20,6 +20,8 @@ import { AuthService } from './auth/auth.service';
 import { ApiService } from './api.service';
 import { SearchUserComponent } from './search-user/search-user.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,8 @@ import { SearchBoxComponent } from './search-box/search-box.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     NgProgressModule.forRoot(),

@@ -1,3 +1,12 @@
-<p>
-  search-box works!
-</p>
+<form class="form-inline input-group">
+  <input #searchBox class="form-control" [formControl]="searchField" [typeahead]="dataSource" type="search"
+    placeholder="Search User">
+  <div class="input-group-append">
+    <button (click)="btnClick(searchBox.value)" class="btn btn-md btn-rounded btn-mdb-color waves-effect m-0 waves-light" type="button"
+      mdbWavesEffect>
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </button>
+  </div>
+</form>
+<pre class="card card-block card-header mb-3">Model: {{selected | json}}</pre>
+<input [(ngModel)]="selected" [typeahead]="states" class="form-control">
