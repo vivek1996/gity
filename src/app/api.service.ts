@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
   private url = 'https://api.github.com/users';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   // Get User Data
   getUser(name: string) {
     return this.http.get(`${this.url}/${name}`);
@@ -22,16 +22,22 @@ export class ApiService {
   getGist(name: string) {
     return this.http.get(`${this.url}/${name}/gists`);
   }
-   // Get user's Starred
-   getStarred(name: string) {
+  // Get user's Starred
+  getStarred(name: string) {
     return this.http.get(`${this.url}/${name}/starred`);
   }
-   // Get user's events
-   getEvents(name: string) {
+  // Get user's events
+  getEvents(name: string) {
     return this.http.get(`${this.url}/${name}/events`);
   }
   // Get user's repo
   getRepo(name: string) {
     return this.http.get(`${this.url}/${name}/repos`);
+  }
+  // get user list
+  searchUser(name: string) {
+    return this.http.get(
+      `https://api.github.com/search/users?q=${name}&per_page=10`
+    );
   }
 }

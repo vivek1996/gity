@@ -7,14 +7,22 @@
     </logo>
     <links>
       <ul class="navbar-nav ml-auto">
+        <form class="form-inline ml-auto">
+          <div class=" m-0">
+            <input class="mr-sm-2" type="search" placeholder="Search User">
+          </div>
+        </form>
         <li class="nav-item  waves-light" mdbWavesEffect>
-          <a class="nav-link white-text" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">Login</a>
+          <a class="nav-link white-text" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">
+            <i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
         </li>
         <li class="nav-item waves-light" routerLinkActive=" active" mdbWavesEffect *ngIf="auth.isAuthenticated()">
-          <a class="nav-link white-text" routerLink="/profile">Profile</a>
+          <a class="nav-link white-text" routerLink="/profile">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>My Profile</a>
         </li>
         <li class="nav-item waves-light" mdbWavesEffect>
-          <a class="nav-link white-text" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">Logout</a>
+          <a class="nav-link white-text" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
         </li>
 
       </ul>
