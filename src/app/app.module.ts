@@ -7,7 +7,6 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 // ngx progressbar import
 import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
@@ -22,6 +21,7 @@ import { SearchUserComponent } from './search-user/search-user.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { Ng2CompleterModule } from 'ng2-completer';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,8 +41,8 @@ import { FormsModule } from '@angular/forms';
     NgProgressHttpModule,
     MDBBootstrapModule.forRoot(),
     TabsModule.forRoot(),
-    PaginationModule.forRoot(),
-    TypeaheadModule.forRoot()
+    Ng2CompleterModule,
+    PaginationModule.forRoot()
   ],
   providers: [AuthService, ApiService],
   bootstrap: [AppComponent],
