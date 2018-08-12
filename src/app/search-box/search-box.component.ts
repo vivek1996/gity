@@ -10,20 +10,19 @@ import { CompleterService, CompleterData } from 'ng2-completer';
 export class SearchBoxComponent implements OnInit {
   protected searchStr: string;
   // protected captain: string;
-  protected dataService: CompleterData;
+  // protected dataService: CompleterData;
 
-
-  constructor(private completerService: CompleterService) {
-   // this.dataService = completerService.remote(`https://api.github.com/search/users?q=vivek&per_page=10`, 'items.login', 'login');
-             this.dataService = completerService.remote(
-            null,
-            'login',
-            'login');
-        this.dataService.urlFormater((term: any) => {
-            return `https://api.github.com/search/users?q=${term}&per_page=10`;
-        });
-        this.dataService.dataField('items');
-       // this.dataService.imageField("avatar_url");
+  constructor(
+    private completerService: CompleterService,
+    private dataService: CompleterData
+  ) {
+    // this.dataService = completerService.remote(`https://api.github.com/search/users?q=vivek&per_page=10`, 'items.login', 'login');
+    dataService = completerService.remote(null, 'login', 'login');
+    dataService.urlFormater((term: any) => {
+      return `https://api.github.com/search/users?q=${term}&per_page=5`;
+    });
+    dataService.dataField('items');
+    // this.dataService.imageField("avatar_url");
   }
 
   ngOnInit() {}
