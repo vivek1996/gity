@@ -88,3 +88,7 @@ body {
   background-image: url('https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff');
   cursor: pointer;
 }
+.form-control {
+  border-top-left-radius: 5em !important;
+  border-bottom-left-radius: 5em !important;
+}
