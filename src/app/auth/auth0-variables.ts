@@ -7,9 +7,9 @@ interface AuthConfig {
 }
 
 export const AUTH_CONFIG: AuthConfig = {
-  CLIENT_ID: 'DIHrFgcEHN-87t3AMcs5AoQeUHyDrUOh',
+  CLIENT_ID: 'bH0qh7s2ahOPGRVK6EjvrpH84LkiNy66',
   CLIENT_DOMAIN: 'vivekm.auth0.com',
   AUDIENCE: 'https://vivekm.auth0.com/userinfo',
-  REDIRECT: 'http://localhost:4200/profile',
+  REDIRECT: 'http://gitty.vivekm.me/profile',
   SCOPE: 'openid profile'
 };
