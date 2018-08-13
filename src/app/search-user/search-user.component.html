@@ -62,7 +62,7 @@
           <hr class=" dropdown-divider d-block">
           <div class="flex-center">
             <pagination pageBtnClass="pink" [boundaryLinks]="true" previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;"
-              [totalItems]="repoDemo.length" (pageChanged)="pageChanged($event)"></pagination>
+              [totalItems]="repoDemo.length" [itemsPerPage]="5" (pageChanged)="pageChanged($event)"></pagination>
           </div>
 
         </div>
@@ -88,7 +88,7 @@
           </section>
           <hr class=" dropdown-divider d-block">
           <div class="flex-center">
-            <pagination [boundaryLinks]="true" previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;" [totalItems]="gistTemp.length"
+            <pagination [boundaryLinks]="true" previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;" [itemsPerPage]="5" [totalItems]="gistTemp.length"
               (pageChanged)="gistChanged($event)"></pagination>
           </div>
         </div>
