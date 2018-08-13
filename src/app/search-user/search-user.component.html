@@ -4,13 +4,30 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-12">
-    <p class="lead">userDetails</p>
-    {{ userDetails | json }}
-  </div>
-  <div class="col-12">
-    {{ userRepos | json }}
-    <hr> {{ userFollowers | json }}
-    <hr> {{ userFollowing | json }}
+  <div class="col-md-4" *ngIf="userDetails">
+    <mdb-card cascade="true">
+      <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+        <mdb-card-img [src]="userDetails.avatar_url"></mdb-card-img>
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <mdb-card-body cascade="true" class="text-center">
+        <h4 class="card-title animated flipInX">
+          <strong>{{ userDetails.name }}</strong>
+        </h4>
+        <h5> {{ userDetails.bio }} </h5>
+        <mdb-card-text>
+          <div class="animated slideInLeft" *ngIf="userDetails">
+            <p *ngIf="userDetails.company !== null">
+              <i class="fa fa-building-o mr-2" aria-hidden="true"></i> Company : {{userDetails.company}} </p>
+            <p *ngIf="userDetails.blog !== null">
+              <i class="fa fa-internet-explorer mr-2" aria-hidden="true"></i>Blog : {{userDetails.blog}} </p>
+            <p *ngIf="userDetails.location !== null">
+              <i class="fa fa-globe mr-2" aria-hidden="true"></i> {{userDetails.location}} </p>
+          </div>
+        </mdb-card-text>
+      </mdb-card-body>
+    </mdb-card>
   </div>
 </div>
