@@ -8,12 +8,11 @@ import { CompleterService, CompleterData, RemoteData } from 'ng2-completer';
   styleUrls: ['./search-box.component.scss']
 })
 export class SearchBoxComponent implements OnInit {
-  protected searchStr: string;
-  // protected captain: string;
-   protected dataService: RemoteData;
+  searchStr: string;
+
+  dataService: RemoteData;
 
   constructor(private completerService: CompleterService) {
-    // this.dataService = completerService.remote(`https://api.github.com/search/users?q=vivek&per_page=10`, 'items.login', 'login');
     this.dataService = completerService.remote(null, 'login', 'login');
     this.dataService.urlFormater((term: any) => {
       return `https://api.github.com/search/users?q=${term}&per_page=5`;
