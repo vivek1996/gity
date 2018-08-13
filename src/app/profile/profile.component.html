@@ -1,6 +1,9 @@
-<div class="flex-center">
-  <app-search-box></app-search-box>
+<div class="row">
+  <div class="col-12 flex-center m-3">
+    <app-search-box></app-search-box>
+  </div>
 </div>
+<hr>
 <div class="row mb-5">
   <div class="col-md-4" *ngIf="profile">
     <mdb-card class="testimonial-card  mt-2">
@@ -59,21 +62,21 @@
   </div>
 </div>
 <!-- Followers and Following -->
-<tabset [justified]="true" type="pills">
-  <tab heading="Followers" customClass="tab-style">
+<tabset [justified]="true" type="pills" *ngIf="user">
+  <tab heading="Followers" customClass="tab-style" *ngIf="user.followers !== 0">
     <div class="py-3">
       <ul>
-        <li class="chip" *ngFor="let follower of followers">
+        <li class="chip animated fadeInLeft" *ngFor="let follower of followers">
           <img [src]="follower.avatar_url" [alt]="follower.login">
           <a [routerLink]="['../','search', follower.login]">{{follower.login}}</a>
         </li>
       </ul>
     </div>
   </tab>
-  <tab heading="Following" customClass="tab-style">
+  <tab heading="Following" customClass="tab-style" *ngIf="user.following !== 0">
     <div class="py-3">
       <ul>
-        <li class="chip" *ngFor="let follower of following">
+        <li class="chip animated fadeInLeft" *ngFor="let follower of following">
           <img [src]="follower.avatar_url" [alt]="follower.login">
           <a [routerLink]="['../','search', follower.login]">{{follower.login}}</a>
         </li>
@@ -83,11 +86,11 @@
 </tabset>
 <!--End Followers and following -->
 <br>
-<tabset [justified]="true" type="pills">
-  <tab heading="Repos" customClass="tab-style">
+<tabset [justified]="true" type="pills" *ngIf="user">
+  <tab heading="Repos" customClass="tab-style" *ngIf="user.public_repos !== 0">
     <div class="row py-3 bg-transparent" *ngIf="repos">
       <section class="col-md-6 my-2" *ngFor="let repo of repos">
-        <div class="card  hoverable">
+        <div class="card  hoverable animated flipInX">
           <div class="card-body black-text">
             <h4>
               <a class=" text-capitalize" [href]="repo.html_url" target="_blank" rel="noopener">{{repo.name}}</a>
@@ -110,10 +113,10 @@
 
     </div>
   </tab>
-  <tab heading="Gists" customClass="tab-style">
+  <tab heading="Gists" customClass="tab-style" *ngIf="user.public_gists !== 0">
     <div class="row py-3 bg-transparent" *ngIf="gists">
       <section class="col-md-6 my-2" *ngFor="let gist of gists">
-        <div class="card  hoverable">
+        <div class="card  hoverable animated flipInX">
           <div class="card-body black-text">
             <h4>
               <a [href]="gist.html_url" target="_blank" rel="noopener">{{gist.description}}</a>

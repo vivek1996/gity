@@ -1,10 +1,11 @@
 <div class="row">
-  <div class="col-12">
+  <div class="col-12 flex-center m-3">
     <app-search-box></app-search-box>
   </div>
 </div>
+<hr>
 <div class="row">
-  <div class="col-md-4" *ngIf="userDetails">
+  <div class="col-md-4 my-2" *ngIf="userDetails">
     <mdb-card cascade="true">
       <div class="view view-cascade overlay waves-light" mdbWavesEffect>
         <mdb-card-img [src]="userDetails.avatar_url"></mdb-card-img>
@@ -39,12 +40,12 @@
       </mdb-card-body>
     </mdb-card>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-8 my-2" *ngIf="userDetails">
     <tabset [justified]="true" type="pills">
-      <tab heading="Repos" customClass="tab-style">
+      <tab heading="Repos" customClass="tab-style" *ngIf="userDetails.public_repos !== 0">
         <div class="row py-3 bg-transparent" *ngIf="userRepos">
           <section class="col-md-6 my-2" *ngFor="let repo of userRepos">
-            <div class="card  hoverable">
+            <div class="card  hoverable animated bounceInRight">
               <div class="card-body black-text">
                 <h4>
                   <a class=" text-capitalize" [href]="repo.html_url" target="_blank" rel="noopener">{{repo.name}}</a>
@@ -67,10 +68,10 @@
 
         </div>
       </tab>
-      <tab heading="Gists" customClass="tab-style">
+      <tab heading="Gists" customClass="tab-style" *ngIf="userDetails.public_gists !== 0">
         <div class="row py-3 bg-transparent" *ngIf="userGists">
           <section class="col-md-6 my-2" *ngFor="let gist of userGists">
-            <div class="card  hoverable">
+            <div class="card  hoverable animated bounceInRight">
               <div class="card-body black-text">
                 <h4>
                   <a [href]="gist.html_url" target="_blank" rel="noopener">{{gist.description}}</a>
@@ -88,8 +89,8 @@
           </section>
           <hr class=" dropdown-divider d-block">
           <div class="flex-center">
-            <pagination [boundaryLinks]="true" previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;" [itemsPerPage]="5" [totalItems]="gistTemp.length"
-              (pageChanged)="gistChanged($event)"></pagination>
+            <pagination [boundaryLinks]="true" previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;" [itemsPerPage]="5"
+              [totalItems]="gistTemp.length" (pageChanged)="gistChanged($event)"></pagination>
           </div>
         </div>
       </tab>
