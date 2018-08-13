@@ -5,6 +5,12 @@
 </div>
 <div class="row">
   <div class="col-12">
+    <p class="lead">userDetails</p>
     {{ userDetails | json }}
+  </div>
+  <div class="col-12">
+    {{ userRepos | json }}
+    <hr> {{ userFollowers | json }}
+    <hr> {{ userFollowing | json }}
   </div>
 </div>
