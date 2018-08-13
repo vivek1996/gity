@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
-
+import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 @Component({
   selector: 'app-search-user',
   templateUrl: './search-user.component.html',
@@ -13,6 +13,9 @@ export class SearchUserComponent implements OnInit {
   userRepos;
   userFollowers;
   userFollowing;
+  repoDemo;
+  userGists;
+  gistTemp;
   constructor(private route: ActivatedRoute, private _http: ApiService) {}
 
   ngOnInit() {
@@ -21,8 +24,9 @@ export class SearchUserComponent implements OnInit {
       this.currentUser = routeParams.user;
       this.getUser();
       this.getRepo();
-      this.getFollowers();
-      this.getFollowing();
+    //  this.getFollowers();
+    //  this.getFollowing();
+      this.getGist();
     });
   }
   // getUser data
@@ -40,9 +44,8 @@ export class SearchUserComponent implements OnInit {
   getRepo() {
     this._http.getRepo(this.currentUser).subscribe(
       data => {
-        let repoDemo;
-        repoDemo = data;
-        this.userRepos = repoDemo.slice(0, 10);
+        this.repoDemo = data;
+        this.userRepos = this.repoDemo.slice(0, 5);
       },
       error => {
         console.log(error);
@@ -72,5 +75,28 @@ export class SearchUserComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+    // get gists
+    getGist() {
+      this._http.getGist(this.currentUser).subscribe(
+        data => {
+          this.gistTemp = data;
+          this.userGists = this.gistTemp.slice(0, 5);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    }
+  // pagination
+  pageChanged(event: PageChangedEvent): void {
+    const startItem = (event.page - 1) * event.itemsPerPage;
+    const endItem = event.page * event.itemsPerPage;
+    this.userRepos = this.repoDemo.slice(startItem, endItem);
+  }
+  gistChanged(event: PageChangedEvent): void {
+    const startItem = (event.page - 1) * event.itemsPerPage;
+    const endItem = event.page * event.itemsPerPage;
+    this.userGists = this.gistTemp.slice(startItem, endItem);
   }
 }

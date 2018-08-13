@@ -1,4 +1,4 @@
-<div class="flex-center" >
+<div class="flex-center">
   <app-search-box></app-search-box>
 </div>
 <div class="row mb-5">
@@ -65,7 +65,7 @@
       <ul>
         <li class="chip" *ngFor="let follower of followers">
           <img [src]="follower.avatar_url" [alt]="follower.login">
-          <a target="_blank" rel="noopener" [href]="follower.html_url">{{follower.login}}</a>
+          <a target="_blank" rel="noopener" routerLink="['/search', follower.login]">{{follower.login}}</a>
         </li>
       </ul>
     </div>
@@ -75,7 +75,7 @@
       <ul>
         <li class="chip" *ngFor="let follower of following">
           <img [src]="follower.avatar_url" [alt]="follower.login">
-          <a target="_blank" rel="noopener" [href]="follower.html_url">{{follower.login}}</a>
+          <a target="_blank" rel="noopener" routerLink="['/search', follower.login]">{{follower.login}}</a>
         </li>
       </ul>
     </div>
