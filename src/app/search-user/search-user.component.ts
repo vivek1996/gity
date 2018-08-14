@@ -16,6 +16,7 @@ export class SearchUserComponent implements OnInit {
   repoDemo;
   userGists;
   gistTemp;
+  contributionChart;
   constructor(private route: ActivatedRoute, private _http: ApiService) {}
 
   ngOnInit() {
@@ -24,13 +25,16 @@ export class SearchUserComponent implements OnInit {
       this.currentUser = routeParams.user;
       this.getUser();
       this.getRepo();
-    //  this.getFollowers();
-    //  this.getFollowing();
+      //  this.getFollowers();
+      //  this.getFollowing();
       this.getGist();
     });
   }
   // getUser data
   getUser() {
+    this.contributionChart = `http://ghchart.rshah.org/409ba5/${
+      this.currentUser
+    }`;
     this._http.getUser(this.currentUser).subscribe(
       data => {
         this.userDetails = data;
@@ -76,18 +80,18 @@ export class SearchUserComponent implements OnInit {
       }
     );
   }
-    // get gists
-    getGist() {
-      this._http.getGist(this.currentUser).subscribe(
-        data => {
-          this.gistTemp = data;
-          this.userGists = this.gistTemp.slice(0, 5);
-        },
-        error => {
-          console.log(error);
-        }
-      );
-    }
+  // get gists
+  getGist() {
+    this._http.getGist(this.currentUser).subscribe(
+      data => {
+        this.gistTemp = data;
+        this.userGists = this.gistTemp.slice(0, 5);
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
   // pagination
   pageChanged(event: PageChangedEvent): void {
     const startItem = (event.page - 1) * event.itemsPerPage;

@@ -97,3 +97,10 @@
     </tabset>
   </div>
 </div>
+<hr>
+<div class="row" *ngIf="userDetails">
+  <div class="col-12  mx-auto">
+    <h4 class="h4-responsive"> Contributions Chart</h4>
+    <img class="img-fluid d-block" [src]="contributionChart" [alt]="userDetails.name">
+  </div>
+</div>

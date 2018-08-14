@@ -140,3 +140,14 @@
     </div>
   </tab>
 </tabset>
+<hr>
+<div class="row" *ngIf="user">
+  <div class="col-12  mx-auto">
+    <h4 class="h4-responsive"> Contributions Chart</h4>
+    <img class="img-fluid d-block" [src]="contributionChart" [alt]="user.login">
+  </div>
+  <div class="col-12 mx-auto">
+    <h4 class="h4-responsive"> Language Chart</h4>
+    <iframe width="600" height="600" [src]="languageChart" frameborder="0"></iframe>
+  </div>
+</div>
