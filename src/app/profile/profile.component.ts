@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit {
   repoDemo: any;
   gistTemp: any;
   contributionChart;
-  languageChart;
+  //  languageChart;
   constructor(public auth: AuthService, private _http: ApiService) {}
 
   ngOnInit() {
@@ -52,8 +52,10 @@ export class ProfileComponent implements OnInit {
     }
   }
   getDetails() {
-    this.contributionChart = `https://ghchart.rshah.org/409ba5/${this.user.login}`;
-    this.languageChart = `https://ionicabizau.github.io/github-profile-languages/api.html?${this.user.login}`;
+    this.contributionChart = `https://ghchart.rshah.org/409ba5/${
+      this.user.login
+    }`;
+    // this.languageChart = `https://ionicabizau.github.io/github-profile-languages/api.html?${this.user.login}`;
     this.getFollowers();
     this.getFollowing();
     this.getRepo();

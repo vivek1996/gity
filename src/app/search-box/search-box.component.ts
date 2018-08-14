@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { FormControl } from '@angular/forms';
-import { CompleterService, CompleterData, RemoteData } from 'ng2-completer';
+import { CompleterService, RemoteData } from 'ng2-completer';
 import { Router } from '@angular/router';
 
 @Component({
@@ -22,7 +21,6 @@ export class SearchBoxComponent implements OnInit {
       return `https://api.github.com/search/users?q=${term}&per_page=5`;
     });
     this.dataService.dataField('items');
-    // this.dataService.imageField("avatar_url");
   }
 
   ngOnInit() {}

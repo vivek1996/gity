@@ -1,5 +1,4 @@
 <div class="form-inline input-group">
-  <!-- <input #searchbox class="form-control" type="search" placeholder="Search User"> -->
   <ng2-completer [(ngModel)]="searchStr" [datasource]="dataService" [minSearchLength]="3" inputClass="form-control" [placeholder]="'Search User'"
     [textSearching]="'Please wait...'" (selected)="search()"></ng2-completer>
   <div class="input-group-append">

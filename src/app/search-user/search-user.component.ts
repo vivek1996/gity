@@ -25,8 +25,6 @@ export class SearchUserComponent implements OnInit {
       this.currentUser = routeParams.user;
       this.getUser();
       this.getRepo();
-      //  this.getFollowers();
-      //  this.getFollowing();
       this.getGist();
     });
   }
