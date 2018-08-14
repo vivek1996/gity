@@ -32,7 +32,7 @@ export class SearchUserComponent implements OnInit {
   }
   // getUser data
   getUser() {
-    this.contributionChart = `http://ghchart.rshah.org/409ba5/${
+    this.contributionChart = `https://ghchart.rshah.org/409ba5/${
       this.currentUser
     }`;
     this._http.getUser(this.currentUser).subscribe(
