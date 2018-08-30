@@ -9,6 +9,39 @@
 </p>
 <br>
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1.
+<br>
+
+## Problem Statement
+
+Project Description -
+This project should be a ready to deploy Github client. It must have all the
+features mentioned below and it must be deployed on a server before
+submission. You are allowed to use any kind of modules, libraries and tool you
+want.
+### About the API -
+GitHub api is an open source API which gives you access to all Github Data-
+Step 1 - Go to https://developer.github.com/v3/ and read the overview.
+Step 2 - For authentication, use Basic Authentication method . You may create a dummy
+github account in case you don’t want to share your actual github credentials.
+Step 3 - For performing authorization, use the Authorization API .
+Step 4 - You may use Github Libraries also for ease of managing the request,
+authentication and authorization etc.
+### Features of the Application -
+1) Login View - User should be able to login to the system through his github
+account. Upon login, user should land on his User View .
+2) User View - Name, company, bio, followers, stars, repo url, public repos and
+gists count. (You may display other suitable information as well)
+a) Search box to search for usernames. Upon searching a username,
+search view should open
+b) List of public repos of user.
+c) List of public gists of user.
+d) List of followers.
+e) Upon clicking on any gist, user should land on his gist view.
+f) Upon clicking on any repo, user should land on repo's github page.
+g) Upon clicking, on any of the follower, its user dashboard should open.
+3) Search View - Upon clicking on search button, User View, of that username,
+should open.
+4) Error Views - You have to handle each error response with a different page.
 
 ## Development server
 
