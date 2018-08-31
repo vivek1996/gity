@@ -43,7 +43,20 @@ g) Upon clicking, on any of the follower, its user dashboard should open.
 should open.
 4) Error Views - You have to handle each error response with a different page.
 
-## Development server
+
+# Project Description :
+The Application has 3 views. They are **Login View, User view, Search view.**
+The login view has the login button to login to the application via github. **Auth0** library is used for the authentication. After successful login the application routes to the user view.
+	 The User View contains the information about the logined user such as Name, company, bio, followers, stars, repo url, public repos and gists count. 
+	 The User's Repos, Gists, Followers and Following are also displayed. Clicking on any of the repo or gists takes to the respective github page. Clicking on any followers or following takes to respective user's details.
+	The search component is embedded in the nav bar and other views. Upon input to the search box the suggestions are given. Clicking any of those suggestions or search button the user detail is displayed in the search view.
+	The search view has the minimal details about the user such as Name, company, bio, followers, stars, repo url, public repos and gists count.
+## Todo ✍
+
+ - [ ] Add service worker
+ - [ ] Add View to display User Events
+ 
+ ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
@@ -66,3 +79,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
